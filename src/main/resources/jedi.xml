@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    谁需要被注入，在哪用autowire
+        比如，这里Sith需要Jedi，则在xml里找Jedi的bean然后inject到属性里面，所以
+        找名字（id）为 "jedi"的bean
+-->
+    <bean id="sith" class="autowire.xml.Sith" autowire="byName"/>
+
+<!--    如果是byType，则可以用一下这个ID，因为只需要type一样-->
+<!--    <bean id="jediii" class="autowire.xml.Jedi"></bean>-->
+
+    <bean id="jedi" class="autowire.xml.Jedi" autowire="byName"/>
+<!--    被注入的那个bean，的名字必须和这里的id完全对应-->
+    <bean id="saber" class="autowire.xml.Lightsaber"/>
+</beans>

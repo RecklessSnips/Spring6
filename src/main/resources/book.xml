@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    Setter injection -->
+    <bean id="book1" class="xml_Bean.DI.Book">
+        <property name="name" value="Jedi"></property>
+        <property name="author" value="Ahsoka"></property>
+    </bean>
+
+<!--    Constructor injection-->
+    <bean id="book2" class="xml_Bean.DI.Book">
+        <constructor-arg name="name" value="Jedi"></constructor-arg>
+        <constructor-arg name="author" value="Anakin"></constructor-arg>
+        <constructor-arg name="aUTHOR" ref="author"></constructor-arg>
+    </bean>
+
+    <bean id="author" class="xml_Bean.DI.Author">
+        <constructor-arg name="name" value="George Lukas"></constructor-arg>
+        <constructor-arg name="company" value="Disney"></constructor-arg>
+    </bean>
+</beans>
