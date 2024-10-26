@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+/*
+    这个文件用xml来运行。但是为了全注解开发，将与之对应的XML已经注释掉。如需要，重新接触注释!
+*/
 // classpath:jdbc.xml 不能有空格！
 @SpringJUnitConfig(locations = "classpath:jdbc.xml")
 public class TransactionTest{
